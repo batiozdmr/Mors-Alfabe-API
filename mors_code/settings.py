@@ -52,7 +52,6 @@ THIRD_PARTY_APPS = [
 ]
 
 LOCAL_APPS = [
-    'apps.parameter',
     'apps.mainpage',
 ]
 
@@ -85,8 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'apps.parameter.context_processors.menu',
-                'apps.parameter.context_processors.site',
+
 
             ],
         },
@@ -100,12 +98,8 @@ WSGI_APPLICATION = 'mors_code.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'mors_code',
-        'USER': 'postgres',  # postgres
-        'PASSWORD': '1',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
