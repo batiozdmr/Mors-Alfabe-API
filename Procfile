@@ -1,0 +1,1 @@
+web: gunicorn rubasoft.wsgi --log-file -

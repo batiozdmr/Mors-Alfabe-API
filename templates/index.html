@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load i18n %}
+
+{% block content %}
+    <!-- ============================================================== -->
+    <!-- 						Content Start	 						-->
+    <!-- ============================================================== -->
+
+    <div class="row page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 align-self-center ">
+                    <h2>Dashboard</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Ana Sayfa</a></li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_arch_decrypt }}</h2>
+                            <p class="text-muted">{{ data_arch_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">ARCH</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_freemem_decrypt }}</h2>
+                            <p class="text-muted">{{ data_freemem_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">FREEMEM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_hostname_decrypt }}</h2>
+                            <p class="text-muted">{{ data_hostname_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">HOSTNAME</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_platform_decrypt }}</h2>
+                            <p class="text-muted">{{ data_platform_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">PLATFORM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_totalmem_decrypt }}</h2>
+                            <p class="text-muted">{{ data_totalmem_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">TOTALMEM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_type_str_decrypt }}</h2>
+                            <p class="text-muted">{{ data_type_str_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">TYPE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3">
+                <div class="widget  bg-light">
+                    <div class="row row-table ">
+                        <div class="margin-b-30">
+                            <h2 class="margin-b-5">{{ checksum_uptime_decrypt }}</h2>
+                            <p class="text-muted">{{ data_uptime_decrypt }}</p>
+                            <span class="float-right text-primary widget-r-m">UPTİME</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-12">
+                <div class="widget bg-light">
+                    <div class="card" style="border: 0;">
+                        <div class="card-header card-default">
+                            CPU DATA LİST
+                        </div>
+                        <div class="card-body">
+                            <table id="datatable" class="table table-striped dt-responsive nowrap">
+                                <thead>
+                                <tr>
+                                    <th>Model</th>
+                                    <th>Speed</th>
+                                    <th>Times User</th>
+                                    <th>Times SYS</th>
+                                    <th>Times Idle</th>
+                                    <th>Times Irq</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                {% for cpu in new_data_cpu %}
+                                    <tr>
+                                        <td>{{ cpu.model }}</td>
+                                        <td>{{ cpu.speed }}</td>
+                                        <td>{{ cpu.times_user }}</td>
+                                        <td>{{ cpu.times_sys }}</td>
+                                        <td>{{ cpu.times_idle }}</td>
+                                        <td>{{ cpu.times_irq }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- 						Content End		 						-->
+    <!-- ============================================================== -->
+
+    <!-- Datatables-->
+    <script src="{% static "assets/lib/datatables/jquery.dataTables.min.js" %}"></script>
+    <script src="{% static "assets/lib/datatables/dataTables.responsive.min.js" %}"></script>
+
+    <script src="{% static "assets/lib/datatables/dataTables.buttons.min.js" %}"></script>
+    <script src="{% static "assets/lib/datatables/jszip.min.js" %}"></script>
+    <script src="{% static "assets/lib/datatables/pdfmake.min.js" %}"></script>
+    <script src="{% static "assets/lib/datatables/vfs_fonts.js" %}"></script>
+    <script src="{% static "assets/lib/datatables/buttons.html5.min.js" %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+
+            $('#datatable2').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            });
+
+            $('#datatable3').DataTable({
+                "scrollY": "400px",
+                "scrollCollapse": true,
+                "paging": false
+            });
+        });
+
+    </script>
+{% endblock content %}

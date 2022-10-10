@@ -1,0 +1,75 @@
+{% load i18n %}
+{% load static %}
+    <!DOCTYPE html>
+    <html lang="tr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Batıhan Özdemir</title>
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static "assets/img/icon.png" %}">
+
+        <!-- Common Plugins -->
+        <link href="{% static "assets/lib/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">
+
+        <!-- Vector Map Css-->
+        <link href="{% static "assets/lib/vectormap/jquery-jvectormap-2.0.2.css" %}" rel="stylesheet"/>
+
+        <!-- Chart C3 -->
+        <link href="{% static "assets/lib/chart-c3/c3.min.css" %}" rel="stylesheet">
+        <link href="{% static "assets/lib/chartjs/chartjs-sass-default.css" %}" rel="stylesheet">
+
+        <!-- DataTables -->
+        <link href="{% static "assets/lib/datatables/jquery.dataTables.min.css" %}" rel="stylesheet" type="text/css">
+        <link href="{% static "assets/lib/datatables/responsive.bootstrap.min.css" %}" rel="stylesheet" type="text/css">
+        <link href="{% static "assets/lib/toast/jquery.toast.min.css" %}" rel="stylesheet">
+
+        <!-- Custom Css-->
+        <link href="{% static "assets/css/style.css" %}" rel="stylesheet">
+
+    </head>
+    <body class="horizontal pace-done">
+
+{% block header %}
+    {% include 'partials/header.html' %}
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+{% block footer %}
+    {% include 'partials/footer.html' %}
+{% endblock %}
+        <!-- Common Plugins -->
+        <script src="{% static "assets/lib/jquery/dist/jquery.min.js" %}"></script>
+		<script src="{% static "assets/lib/bootstrap/js/popper.min.js" %}"></script>
+        <script src="{% static "assets/lib/bootstrap/js/bootstrap.min.js" %}"></script>
+		<script src="{% static "assets/lib/ace-menu/ace-responsive-menu-min.js" %}"></script>
+        <script src="{% static "assets/lib/pace/pace.min.js" %}"></script>
+        <script src="{% static "assets/lib/jasny-bootstrap/js/jasny-bootstrap.min.js" %}"></script>
+        <script src="{% static "assets/lib/slimscroll/jquery.slimscroll.min.js" %}"></script>
+        <script src="{% static "assets/lib/nano-scroll/jquery.nanoscroller.min.js" %}"></script>
+        <script src="{% static "assets/lib/metisMenu/metisMenu.min.js" %}"></script>
+        <script src="{% static "assets/js/custom.js" %}"></script>
+
+
+
+        <!--Chart Script-->
+        <script src="{% static "assets/lib/chartjs/chart.min.js" %}"></script>
+		<script src="{% static "assets/lib/chartjs/chartjs-sass.js" %}"></script>
+
+		<!--Vetor Map Script-->
+		<script src="{% static "assets/lib/vectormap/jquery-jvectormap-2.0.2.min.js" %}"></script>
+        <script src="{% static "assets/lib/vectormap/jquery-jvectormap-us-aea-en.js" %}"></script>
+
+		<!-- Chart C3 -->
+        <script src="{% static "assets/lib/chart-c3/d3.min.js" %}"></script>
+        <script src="{% static "assets/lib/chart-c3/c3.min.js" %}"></script>
+
+        <!-- Datatables-->
+        <script src="{% static "assets/lib/datatables/jquery.dataTables.min.js" %}"></script>
+        <script src="{% static "assets/lib/datatables/dataTables.responsive.min.js" %}"></script>
+        <script src="{% static "assets/lib/toast/jquery.toast.min.js" %}"></script>
+        <script src="{% static "assets/js/dashboard.js" %}"></script>
+
+    </body>
+</html>
