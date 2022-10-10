@@ -26,3 +26,6 @@ python manage.py runserver
 ```
 7. Web Sayfasına Gidin
 http://127.0.0.1:8000/
+
+
+![enter image description here](https://rubasoft.s3.eu-central-1.amazonaws.com/media/upload/userFormUpload/KkqwBoyoPeq4Q3sDtUZje5NPeLqSHxSt.png)
