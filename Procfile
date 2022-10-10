@@ -1,1 +1,1 @@
-web: gunicorn rubasoft.wsgi --log-file -
+web: gunicorn mors_code.wsgi --log-file -
